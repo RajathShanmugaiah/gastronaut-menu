@@ -23,16 +23,28 @@ const SingleFoodItem = ({singleFood, underline}) =>{
     )
 }
 
-const MenuItems = ({selectedCategory, categoriesUnderType, underline}) => {
+const MenuItems = ({path, selectedCategory, categoriesUnderType, underline}) => {
     const categoryMatched = categoriesUnderType.find(item => item.id === selectedCategory.id)
-    return(
-        <div className="flex flex-start FoodItemOuterWrapper">
+    const smallMenu = categoryMatched?.meals.length === 1?
+                        categoryMatched?.meals.slice(0,1)
+                      :categoryMatched?.meals.length === 2?
+                        categoryMatched?.meals.slice(0,2)
+                      : categoryMatched?.meals.slice(0,3)
+    return(<>
             {
-                categoryMatched?.meals.map( (singleFood,index) => (
-                    <SingleFoodItem key={index} {...{singleFood, underline}} />
-                ))
-            }
-        </div>
-    )
+                !path?
+                <div className="flex flex-start FoodItemOuterWrapper">
+                    {smallMenu?.map( (singleFood,index) => (
+                            <SingleFoodItem key={index} {...{singleFood, underline}} />
+                        ))}
+                </div>  
+                :
+                <div className="flex flex-start FoodItemOuterWrapper">
+                    {categoryMatched?.meals.map( (singleFood,index) => (
+                            <SingleFoodItem key={index} {...{singleFood, underline}} />
+                        ))}
+                </div>  
+            }      
+    </>)
 }
 export default MenuItems;

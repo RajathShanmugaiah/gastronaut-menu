@@ -15,7 +15,7 @@ function App() {
     <div className="App">
         <Router>
           <Switch>
-            <Route path="/:id" children={<IndexMenu />} />
+            <Route exact  path={["/:id", "/menu/:id"]} children={<IndexMenu />} />
           </Switch>
         </Router>
     </div>

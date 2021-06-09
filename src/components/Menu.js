@@ -4,11 +4,15 @@ import MenuItems from "./MenuItems";
 import MenuTabs from "./MenuTabs";
 // import NewMenuItem from "./newMenuItem";
 // import NewMenuTabs from "./newMenuTabs";
+import FullscreenIcon from '@material-ui/icons/Fullscreen';
 
-const Menu = ({restostyle, restoMenuTypes, restoCategories, language='de'}) => {
+const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='de'}) => {
+    console.log(restoCategories)
         /*food type*/
         const [menuType, setMenuType] = useState(restoMenuTypes[0])
+        console.log(menuType)
         const categoriesUnderType = useMemo(() => restoCategories.filter(item => item.type === menuType), [menuType, restoCategories])
+        console.log(categoriesUnderType)
         const [category, setCategory] = useState('')
         const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -35,9 +39,9 @@ const Menu = ({restostyle, restoMenuTypes, restoCategories, language='de'}) => {
             })
             
         },[categoriesUnderType, language])
-
+        console.log(categories)
         useEffect(() => {
-            setCategory(categories[0].id || null)
+            setCategory(categories[0]?.id || null)
             setSelectedCategory(categories[0])
             // eslint-disable-next-line
         },[categories[0].id, categories[0]])
@@ -48,6 +52,13 @@ const Menu = ({restostyle, restoMenuTypes, restoCategories, language='de'}) => {
           };
     return(<>
         <div className="menuSectionV2 center">
+                    {
+                        !path && 
+                        <a target="_blank" rel="noopener noreferrer" href={`/menu/${id}`}>
+                            <FullscreenIcon style={{alignSelf:"flex-end", cursor:"pointer", position: "absolute", top: 0, right: 0}}/>
+                        </a>
+                    }
+                    
             <div className="menuCategoryWrapperV2"> 
                 {
                     restoMenuTypes.map((item, index) =>(
@@ -58,7 +69,7 @@ const Menu = ({restostyle, restoMenuTypes, restoCategories, language='de'}) => {
                 }
                 <div className="OuterBorder OuterBorderPosition flex-column" style={{border: `2px solid ${colorVar}`}}>
                     <MenuTabs {...{categoriesUnderType, category, underline, restostyle, handleChange, categories}} />
-                    <MenuItems {...{selectedCategory, categoriesUnderType, underline}} />
+                    <MenuItems {...{path, selectedCategory, categoriesUnderType, underline}} />
                 </div>
             </div>
         </div>

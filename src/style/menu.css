@@ -84,6 +84,61 @@
     margin-block-end: 0em;
 }
 
+
+.show-image-carousel {
+    z-index: 999;
+  }
+  .show-image-carousel .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.66);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .show-image-carousel .img-show-carousel {
+    width: 35rem;
+    height: 35rem;
+    background: #fff;
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: scroll;
+  }
+  .img-show-carousel span {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 99;
+    cursor: pointer;
+  }
+
+  .img-show-carousel::-webkit-scrollbar {
+    display: block;
+  }
+  .img-show-carousel::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .img-show-carousel img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .image-carousel-biggerImage-close {
+    color: white;
+    float: right;
+    z-index: 1000;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+
 .FoodItemDescription{
     margin-block-start: 0.33em;
     margin-block-end: 0.33em;

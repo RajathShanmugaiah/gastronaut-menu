@@ -4,11 +4,15 @@ import Menu from "./Menu";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import {
-    useParams
+    useParams,
+    useLocation 
   } from "react-router-dom";
 
 const IndexMenu = () => {
-    const {id} = useParams();
+    const { id } = useParams();
+    const location = useLocation();
+    // eslint-disable-next-line
+    const [ path, setPath ] = useState(location.pathname.includes('menu'))
     const[data, setData] = useState(null);
     useEffect(() => {
         axios
@@ -21,8 +25,8 @@ const IndexMenu = () => {
           <CircularProgress />
       </div>)
 
-    return(
-      <Menu restostyle={data.styles} restoMenuTypes={data.types} restoCategories={data.categories}/>
-    )
+    return(<>
+        <Menu {...{id, path}} restostyle={data.styles} restoMenuTypes={data.types} restoCategories={data.categories}/>
+    </>)
 }
 export default IndexMenu;
