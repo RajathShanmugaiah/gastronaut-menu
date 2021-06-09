@@ -2,12 +2,8 @@ import React, {useState, useEffect, useMemo} from "react";
 import "../style/menu.css";
 import MenuItems from "./MenuItems";
 import MenuTabs from "./MenuTabs";
-// import NewMenuItem from "./newMenuItem";
-// import NewMenuTabs from "./newMenuTabs";
-import FullscreenIcon from '@material-ui/icons/Fullscreen';
 
 const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='de'}) => {
-    console.log(restoCategories)
         /*food type*/
         const [menuType, setMenuType] = useState(restoMenuTypes[0])
         console.log(menuType)
@@ -52,13 +48,7 @@ const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='
           };
     return(<>
         <div className="menuSectionV2 center">
-                    {
-                        !path && 
-                        <a target="_blank" rel="noopener noreferrer" href={`/menu/${id}`}>
-                            <FullscreenIcon style={{alignSelf:"flex-end", cursor:"pointer", position: "absolute", top: 0, right: 0}}/>
-                        </a>
-                    }
-                    
+      
             <div className="menuCategoryWrapperV2"> 
                 {
                     restoMenuTypes.map((item, index) =>(
@@ -70,6 +60,14 @@ const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='
                 <div className="OuterBorder OuterBorderPosition flex-column" style={{border: `2px solid ${colorVar}`}}>
                     <MenuTabs {...{categoriesUnderType, category, underline, restostyle, handleChange, categories}} />
                     <MenuItems {...{path, selectedCategory, categoriesUnderType, underline}} />
+                    {
+                        !path && 
+                        <a target="_blank" style={{textDecoration:"none"}} rel="noopener noreferrer" href={`/menu/${id}`}>
+                            <button className="button" style={Object.assign(underline)}>
+                                    See All
+                            </button>
+                        </a>
+                    }
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@ const IndexMenu = () => {
       <div className="circularCenter">
           <CircularProgress />
       </div>)
-
+      document.title= id.toUpperCase();
     return(<>
         <Menu {...{id, path}} restostyle={data.styles} restoMenuTypes={data.types} restoCategories={data.categories}/>
     </>)

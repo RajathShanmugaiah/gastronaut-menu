@@ -70,3 +70,22 @@ p {
     -o-user-select: none;
     user-select: none;
     }
+
+  .button{
+    display: block;
+    width: 131px;
+    height: 36px;
+    letter-spacing: 1.25px;
+    background-color: var(--background);
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+  }
+  .button:hover {
+    display: inline-block;
+    background-color: white;
+    border: 0;
+    border: 1px solid var(--background);
+    cursor: pointer;
+    border-radius: 0;
+}
