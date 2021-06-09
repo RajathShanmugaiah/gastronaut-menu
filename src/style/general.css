@@ -80,6 +80,7 @@ p {
     text-transform: uppercase;
     text-decoration: none;
     border: none;
+    font-weight: 400;
   }
   .button:hover {
     display: inline-block;
