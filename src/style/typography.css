@@ -119,10 +119,10 @@
   }
   
   .primary-text-color{
-      color: var(primaryColor);
+      color: var(--background);
   }
   .secondary-text-color{
-    color: var(fontColor);
+    color: var(--font);
     }
 
 
