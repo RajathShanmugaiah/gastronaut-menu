@@ -44,8 +44,8 @@ const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='
 
         const colorVar =  restostyle.primaryColor;
         const underline = {
-            '--background':colorVar ,
-            '--font':restostyle.fontColor
+            '--background': `#${colorVar}` ,
+            '--font': `#${restostyle.fontColor}`
           };
     return(<>
         <div className="menuSectionV2 center" style={Object.assign(underline)}>
