@@ -85,7 +85,7 @@ p {
   .button:hover {
     display: block;
     background-color: var(--background-color);
-    color: #fff;
+    color: var(--font);
     border: 2px solid var(--primary);
     cursor: pointer;
 }
