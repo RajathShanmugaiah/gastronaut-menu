@@ -78,7 +78,7 @@ p {
     background-color: var(--primary);
     text-transform: uppercase;
     text-decoration: none;
-    border: none;
+    border: 2px solid var(--primary);
     font-weight: 400;
     border-radius: var(--border-radius);
   }

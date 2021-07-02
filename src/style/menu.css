@@ -1,6 +1,6 @@
 .menuSectionV2{
     padding: 68px 128px;
-    background-color: white;
+    background-color: var(--background-color);
     font-family: var(--font-family) !important;
 }
 .menuCategoryWrapperV2{
