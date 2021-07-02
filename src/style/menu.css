@@ -23,6 +23,7 @@
 .OuterBorder {
     margin-top: -20px;
     padding: 60px;
+    border: 2px solid var(--primary);
 }
 .OuterBorderPosition {
     position: relative;
