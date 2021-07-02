@@ -176,12 +176,27 @@
         display: block;
         width: 100%;
         margin: 20px;
-        color: var(--fontColor);
+        color: var(--font);
     }
+    .showInMobile label{
+        color: var(--font);
+    }
+    .MuiSelect-icon, .MuiInput-underline:after{
+        color: var(--font) !important;
+    }
+    .MuiInput-underline:after, .MuiInput-underline:before{    
+        border-bottom: 2px solid var(--font) !important;
+    } 
+    .MuiSelect-root .MuiSelect-select .MuiSelect-selectMenu .MuiInputBase-input .MuiInput-input{
+        color: var(--font) !important;
+    }
+    .showInMobile label div input svg::after{
+        color: var(--font) !important;
+    } 
     .showInMobile .MuiSelect-select.MuiSelect-select{
         text-align: left;
         font-size: 16px;
-        color: var(--fontColor);
+        color: var(--font);
     }
     .menuSectionV2 {
         padding: 15px 15px;

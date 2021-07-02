@@ -44,9 +44,9 @@ const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='
 
         const colorVar =  restostyle.primaryColor;
         const underline = {
-            '--background-color': `#${restostyle.backgroundColor}`,
-            '--primary': `#${colorVar}` ,
-            '--font': `#${restostyle.fontColor}`,
+            '--background-color': `${restostyle.backgroundColor.includes("#")? restostyle.backgroundColor : `#${restostyle.backgroundColor}`}`,
+            '--primary': `${colorVar.includes("#")? colorVar : `#${colorVar}`}` ,
+            '--font': `${ restostyle.fontColor.includes("#")? restostyle.fontColor : `#${restostyle.fontColor}`}`,
             '--font-family': `${restostyle.fontFamily}` ,
             '--border-radius': `${restostyle.borderRadius}px`
           };
@@ -62,7 +62,7 @@ const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='
                     ))
                 }
                 <div className="OuterBorder OuterBorderPosition flex-column" style={{border: `2px solid #${colorVar}`}}>
-                    <MenuTabs {...{categoriesUnderType, category,  restostyle, handleChange, categories}} />
+                    <MenuTabs {...{categoriesUnderType, category,  restostyle, handleChange, categories, menuType}} />
                     <MenuItems {...{path, selectedCategory, categoriesUnderType}} />
                     {
                         !path && 

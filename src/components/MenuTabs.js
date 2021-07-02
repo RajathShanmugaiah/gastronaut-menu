@@ -14,10 +14,11 @@ const MenuTabsTitle = ({item, category, handleChange = () => {}, restostyle, lan
     )
 }
 
-const ChooseMenuItem = ({category, handleChange = () => {}, categories,  restostyle, language}) => {
+const ChooseMenuItem = ({category, handleChange = () => {}, categories,  restostyle, language, menuType}) => {
+    console.log(categories)
     return(<>
         <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label" style={{color: restostyle.fontColor}}>Food</InputLabel>
+        <InputLabel id="demo-simple-select-label" style={{color: "var(--font)",textTransform:"uppercase"}}>{menuType}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
@@ -36,7 +37,7 @@ const ChooseMenuItem = ({category, handleChange = () => {}, categories,  restost
 }
 
 const MenuTabs = ({categoriesUnderType, category,handleCategory = () => {}, 
- restostyle, handleChange = () => {}, language = 'de', categories}) => {
+ restostyle, handleChange = () => {}, language = 'de', categories, menuType}) => {
 
     const fontColor =  {
         '--fontColor':restostyle.fontColor 
@@ -53,7 +54,7 @@ const MenuTabs = ({categoriesUnderType, category,handleCategory = () => {},
             </div>
         </div>
         <div className="showInMobile" style={Object.assign(fontColor)}>
-            <ChooseMenuItem {...{handleChange, categories, category, restostyle, language}}/>
+            <ChooseMenuItem {...{handleChange, categories, category, restostyle, language, menuType}}/>
         </div>
     </>)
 }
