@@ -6,7 +6,7 @@ const SingleFoodItem = ({singleFood}) =>{
         <div className="FoodItemWrapper flex-column flex-start">
             <div>
                 <h6 className="primary-text-color foodItemStyle caption-text">
-                    {translate('tags')}
+                    {translate('tags')? translate('tags') : " "}
                 </h6>
             </div>
 
