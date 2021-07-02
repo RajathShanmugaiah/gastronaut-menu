@@ -119,10 +119,10 @@
   }
   
   .primary-text-color{
-      color: #D0B26D;
+      color: var(primaryColor);
   }
   .secondary-text-color{
-    color: #224C9C;
+    color: var(fontColor);
     }
 
 
