@@ -66,7 +66,7 @@ const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='
                     <MenuItems {...{path, selectedCategory, categoriesUnderType}} />
                     {
                         !path && 
-                        <a target="_blank" style={{textDecoration:"none"}} rel="noopener noreferrer" href={`/menu/${id}`}>
+                        <a target="_blank" style={{textDecoration:"none"}} rel="noopener noreferrer" href={`/menu/${id}/?primaryColor=cc9933&fontColor=fff&backgroundColor=000&fontFamily=Quicksand%20sans-serif&borderRadius=50`}>
                             <button className="button">
                                     See All
                             </button>

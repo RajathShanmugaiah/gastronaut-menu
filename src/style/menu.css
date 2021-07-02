@@ -1,5 +1,6 @@
 .menuSectionV2{
     padding: 68px 128px;
+    height: 90vh;
     background-color: var(--background-color);
     font-family: var(--font-family) !important;
 }
