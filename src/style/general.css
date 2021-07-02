@@ -73,20 +73,19 @@ p {
 
   .button{
     display: block;
-    width: 131px;
-    height: 36px;
+    padding: 10px 24px;
     letter-spacing: 1.25px;
-    background-color: var(--background);
+    background-color: var(--primary);
     text-transform: uppercase;
     text-decoration: none;
     border: none;
     font-weight: 400;
+    border-radius: var(--border-radius);
   }
   .button:hover {
-    display: inline-block;
-    background-color: white;
-    border: 0;
-    border: 1px solid var(--background);
+    display: block;
+    background-color: var(--background-color);
+    color: #fff;
+    border: 2px solid var(--primary);
     cursor: pointer;
-    border-radius: 0;
 }

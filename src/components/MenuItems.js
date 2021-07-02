@@ -1,6 +1,6 @@
 import React from 'react';
 import useTranslations from "../hooks/useTranslations"
-const SingleFoodItem = ({singleFood, underline}) =>{
+const SingleFoodItem = ({singleFood}) =>{
     const {translate} = useTranslations(singleFood.translations)
     return(
         <div className="FoodItemWrapper flex-column flex-start">
@@ -11,7 +11,7 @@ const SingleFoodItem = ({singleFood, underline}) =>{
             </div>
 
             <div style={{display:"flex", flexDirection:"row", alignItems:"flex-start", justifyContent:"space-between", width:"100%"}}>
-                <h6  className="FoodItemName  flex secondary-text-color weight-regular" style={underline}>
+                <h6  className="FoodItemName  flex secondary-text-color weight-regular">
                     {translate('title')}
                 </h6>
                 <h6 className="FoodItemPrice secondary-text-color weight-regular">
@@ -23,7 +23,7 @@ const SingleFoodItem = ({singleFood, underline}) =>{
     )
 }
 
-const MenuItems = ({path, selectedCategory, categoriesUnderType, underline}) => {
+const MenuItems = ({path, selectedCategory, categoriesUnderType}) => {
     const categoryMatched = categoriesUnderType.find(item => item.id === selectedCategory.id)
     const smallMenu = categoryMatched?.meals.length === 1?
                         categoryMatched?.meals.slice(0,1)
@@ -35,13 +35,13 @@ const MenuItems = ({path, selectedCategory, categoriesUnderType, underline}) => 
                 !path?
                 <div className="flex flex-start FoodItemOuterWrapper">
                     {smallMenu?.map( (singleFood,index) => (
-                            <SingleFoodItem key={index} {...{singleFood, underline}} />
+                            <SingleFoodItem key={index} {...{singleFood}} />
                         ))}
                 </div>  
                 :
                 <div className="flex flex-start FoodItemOuterWrapper">
                     {categoryMatched?.meals.map( (singleFood,index) => (
-                            <SingleFoodItem key={index} {...{singleFood, underline}} />
+                            <SingleFoodItem key={index} {...{singleFood}} />
                         ))}
                 </div>  
             }      

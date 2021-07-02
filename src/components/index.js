@@ -19,12 +19,15 @@ const IndexMenu = () => {
     const params = new URLSearchParams(location.search.substring(1));
     let primaryNewColor = params.get("primaryColor");
     let fontNewColor = params.get("fontColor");
+    let backgroundNewColor = params.get("backgroundColor");
+    let newFontFamily = params.get("fontFamily");
+    let newBorderRadius = params.get("borderRadius");
     useEffect(() => {
         axios
           .get(`https://api.gastronaut.ai/v02/menues/${id}/website`,{
           })
-          .then(result =>{setData({ categories: result.data.categories, types: result.data.types, styles: primaryNewColor && fontNewColor? { backgroundColor: "transparent", primaryColor: primaryNewColor, fontColor: fontNewColor} : result.data.styles  }) });
-      }, [id, primaryNewColor, fontNewColor]);
+          .then(result =>{setData({ categories: result.data.categories, types: result.data.types, styles: primaryNewColor && fontNewColor? { primaryColor: primaryNewColor, fontColor: fontNewColor, backgroundColor: backgroundNewColor, fontFamily: newFontFamily, borderRadius: newBorderRadius} : result.data.styles  }) });
+      }, [id, primaryNewColor, fontNewColor, backgroundNewColor, newFontFamily, newBorderRadius]);
       if(!data) return (
       <div className="circularCenter">
           <CircularProgress />

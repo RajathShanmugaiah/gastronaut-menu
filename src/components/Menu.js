@@ -44,8 +44,11 @@ const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='
 
         const colorVar =  restostyle.primaryColor;
         const underline = {
-            '--background': `#${colorVar}` ,
-            '--font': `#${restostyle.fontColor}`
+            '--background-color': `#${restostyle.backgroundColor}`,
+            '--primary': `#${colorVar}` ,
+            '--font': `#${restostyle.fontColor}`,
+            '--font-family': `${restostyle.fontFamily}` ,
+            '--border-radius': `${restostyle.borderRadius}px`
           };
     return(<>
         <div className="menuSectionV2 center" style={Object.assign(underline)}>
@@ -58,13 +61,13 @@ const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='
                         </h4>
                     ))
                 }
-                <div className="OuterBorder OuterBorderPosition flex-column" style={{border: `2px solid ${colorVar}`}}>
-                    <MenuTabs {...{categoriesUnderType, category, underline, restostyle, handleChange, categories}} />
-                    <MenuItems {...{path, selectedCategory, categoriesUnderType, underline}} />
+                <div className="OuterBorder OuterBorderPosition flex-column" style={{border: `2px solid #${colorVar}`}}>
+                    <MenuTabs {...{categoriesUnderType, category,  restostyle, handleChange, categories}} />
+                    <MenuItems {...{path, selectedCategory, categoriesUnderType}} />
                     {
                         !path && 
                         <a target="_blank" style={{textDecoration:"none"}} rel="noopener noreferrer" href={`/menu/${id}`}>
-                            <button className="button" style={Object.assign(underline)}>
+                            <button className="button">
                                     See All
                             </button>
                         </a>

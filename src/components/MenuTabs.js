@@ -4,10 +4,10 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel'
 
-const MenuTabsTitle = ({item, category, handleChange = () => {}, underline, restostyle, language}) => {
+const MenuTabsTitle = ({item, category, handleChange = () => {}, restostyle, language}) => {
     return(
         <div className="center mobileCenter">
-            <h6 className={[`FoodSubCategoryName center weight-regular`, category === item.id && "categoryTab"].join(' ')} style={Object.assign( {fontWeight:  category === item.id ? "bold" : "lighter", color: restostyle.fontColor}, underline)} onClick={() => handleChange(item.id)}>
+            <h6 className={[`FoodSubCategoryName center weight-regular`, category === item.id && "categoryTab"].join(' ')} style={Object.assign( {fontWeight:  category === item.id ? "bold" : "lighter", color: restostyle.fontColor})} onClick={() => handleChange(item.id)}>
                 {item.label}
             </h6>
         </div>
@@ -35,7 +35,8 @@ const ChooseMenuItem = ({category, handleChange = () => {}, categories,  restost
     </>)
 }
 
-const MenuTabs = ({categoriesUnderType, category,handleCategory = () => {}, underline, restostyle, handleChange = () => {}, language = 'de', categories}) => {
+const MenuTabs = ({categoriesUnderType, category,handleCategory = () => {}, 
+ restostyle, handleChange = () => {}, language = 'de', categories}) => {
 
     const fontColor =  {
         '--fontColor':restostyle.fontColor 
@@ -45,7 +46,8 @@ const MenuTabs = ({categoriesUnderType, category,handleCategory = () => {}, unde
             <div className="SubCategoryTabs center">
                 {
                     categories.map((item, index) => (
-                        <MenuTabsTitle key={index} {...{item, handleChange, category, underline, restostyle, language}} />
+                        <MenuTabsTitle key={index} {...{item, handleChange, category, 
+                             restostyle, language}} />
                     ))
                 } 
             </div>
