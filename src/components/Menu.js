@@ -6,9 +6,7 @@ import MenuTabs from "./MenuTabs";
 const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='de'}) => {
         /*food type*/
         const [menuType, setMenuType] = useState(restoMenuTypes[0])
-        console.log(menuType)
         const categoriesUnderType = useMemo(() => restoCategories.filter(item => item.type === menuType), [menuType, restoCategories])
-        console.log(categoriesUnderType)
         const [category, setCategory] = useState('')
         const [selectedCategory, setSelectedCategory] = useState('');
 
@@ -35,7 +33,6 @@ const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='
             })
             
         },[categoriesUnderType, language])
-        console.log(categories)
         useEffect(() => {
             setCategory(categories[0]?.id || null)
             setSelectedCategory(categories[0])

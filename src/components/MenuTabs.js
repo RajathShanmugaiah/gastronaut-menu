@@ -15,7 +15,6 @@ const MenuTabsTitle = ({item, category, handleChange = () => {}, restostyle, lan
 }
 
 const ChooseMenuItem = ({category, handleChange = () => {}, categories,  restostyle, language, menuType}) => {
-    console.log(categories)
     return(<>
         <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label" style={{color: "var(--font)",textTransform:"uppercase"}}>{menuType}</InputLabel>
