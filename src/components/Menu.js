@@ -61,7 +61,7 @@ const Menu = ({id, path, restostyle, restoMenuTypes, restoCategories, language='
                         </h4>
                     ))
                 }
-                <div className="OuterBorder OuterBorderPosition flex-column" style={{border: `2px solid ${colorVar}`}}>
+                <div className="OuterBorder OuterBorderPosition flex-column" style={{border: `2px solid var(--primary)`}}>
                     <MenuTabs {...{categoriesUnderType, category,  restostyle, handleChange, categories, menuType}} />
                     <MenuItems {...{path, selectedCategory, categoriesUnderType}} />
                     {
